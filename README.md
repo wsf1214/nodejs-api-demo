@@ -2,6 +2,5 @@
 
 ```
   cnpm install
-  cnpm run start-api//启动api服务
-  cnpm run start-html//启动http-server服务
+  cnpm run start
 ```
