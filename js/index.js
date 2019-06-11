@@ -6,6 +6,7 @@ app.use("/api",test);//请求test中的接口是 需要加上/api  比如 /api/g
 app.listen(4000, () => {
   console.log('正在监听端口4000\n'.red+'http://127.0.0.1:4000'.green+'\n'+('http://'+getIPAdress()+":4000").green); 
 })
+// 获取本机ip地址
 function getIPAdress(){  
   var interfaces = require('os').networkInterfaces();  
   for(var devName in interfaces){  

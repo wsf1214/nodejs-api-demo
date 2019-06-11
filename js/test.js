@@ -1,4 +1,4 @@
-const { app, router, conn } = require("./connect");
+const { router, conn } = require("./connect");
 // 按条件查询
 router.post('/getlistdetl', (req, res) => {
   let { page_size, page_index, keyword } = req.body || {};
