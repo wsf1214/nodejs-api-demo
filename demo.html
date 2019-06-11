@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Index</title>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+  <script>
+    function parseJSON(response) {
+      return response.json();
+    }
+    function checkStatus(response) {
+      if (response.status >= 200 && response.status < 300) {
+        return response;
+      }
+      const error = new Error(response.statusText);
+      error.code = response.status;
+      error.msg = response.statusText;
+      error.url = response.url;
+      throw error;
+    }
+    fetch("http://localhost:4000/api/getlistdetl", {
+      method: "post",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: "id=20&keyword=张"
+    }).
+      then(checkStatus).
+      then(parseJSON).
+      then(res => {
+        console.log("res", res)
+      })
+    // $(function () {
+    //   //post请求
+    //   $.ajax({
+    //     type: 'get',
+    //     url: 'http://127.0.0.1:4000/api/getlist',
+    //     data: { id: 20 },
+    //     success: function (data) {
+    //       console.log("get:api/getlist", data);
+    //     },
+    //     error: function (err) {
+    //       console.log(err)
+    //     }
+    //   })
+    // })
+  </script>
+</body>
+
+</html>
