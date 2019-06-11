@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "start": "clear;hotnode index.js"
+    "start-api": "clear;hotnode js/index.js;",
+    "install":"cnpm install",
+    "start-html":"http-server -p 3456 -o"
   },
   "dependencies": {
     "colors": "^1.3.3",
